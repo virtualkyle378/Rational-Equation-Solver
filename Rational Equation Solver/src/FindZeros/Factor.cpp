@@ -1,5 +1,6 @@
 #include <vector>
-#include <Fraction.h>
+#include <algorithm>
+#include "Fraction.h"
 using namespace std;
 
 vector<int> factorNumber(int num){
@@ -14,4 +15,15 @@ vector<int> factorNumber(int num){
 	return factors;
 }
 
+vector<Fraction> pairFactors(vector<int> factor1, vector<int> factor2){
+	vector<Fraction> fractions;
+	fractions.push_back(Fraction(5,3));
+	for (unsigned int x = 0; x < factor1.size(); x++) {
+		for (unsigned int y = 0; y < factor2.size(); ++y) {
+			if(find(fractions.begin(), fractions.end(), simpFrac(Fraction(factor1.at(x), factor2.at(y)))) != fractions.end())
+				fractions.push_back(Fraction(5,3));
+		}
+	}
+	return fractions;
+}
 

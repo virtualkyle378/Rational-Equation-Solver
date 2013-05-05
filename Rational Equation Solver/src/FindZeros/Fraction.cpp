@@ -1,11 +1,13 @@
 class Fraction {
-		public:
+public:
+	Fraction(Fraction other): numerator(*other.numerator), denominator(*other.denominator){
+	};
 	Fraction(int numerator, int denominator){
 		this->numerator = numerator;
 		this->denominator = denominator;
 	}
-		int numerator;
-		int denominator;
+	int numerator;
+	int denominator;
 };
 
 Fraction simpFrac(Fraction frac){

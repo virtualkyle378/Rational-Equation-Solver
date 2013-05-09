@@ -1,8 +1,8 @@
-enum Operator{
+typedef enum {
 	Null,
 	Add,
 	Subtract
-};
+} Operator;
 
 typedef struct Sqrt {
 	int whole;

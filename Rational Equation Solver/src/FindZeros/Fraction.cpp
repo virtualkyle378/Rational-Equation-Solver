@@ -1,14 +1,43 @@
+//Fraction simpFrac(Fraction frac);
+
 class Fraction {
 public:
 	int numerator;
 	int denominator;
-	Fraction(Fraction& other): numerator(other.numerator), denominator(other.denominator){
-	};
-	Fraction(int numerator, int denominator){
-		this->numerator = numerator;
-		this->denominator = denominator;
-	}
+	//Fraction(Fraction& other): numerator(other.numerator), denominator(other.denominator){
+	//};
+	//Fraction(const Fraction& other){
+	//	numerator = other.numerator;
+	//	denominator = other.denominator;
+	//}
+	//Fraction(int numerator, int denominator){
+	//	this->numerator = numerator;
+	//	this->denominator = denominator;
+	//}
+	Fraction(const Fraction& other);
+	Fraction(int numerator, int denominator);
+	~Fraction();
+	bool operator==(const Fraction& other);
 };
+
+Fraction::Fraction(const Fraction& other){
+	numerator = other.numerator;
+	denominator = other.denominator;
+}
+
+Fraction::Fraction(int numerator, int denominator){
+	this->numerator = numerator;
+	this->denominator = denominator;
+}
+
+Fraction::~Fraction(){
+
+}
+
+bool Fraction::operator==(const Fraction &other){
+    return(other.numerator == numerator && other.denominator == denominator);
+}
+
 
 Fraction simpFrac(Fraction frac){
 	if(frac.denominator < 0){

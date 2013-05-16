@@ -1,16 +1,16 @@
-typedef enum {
+/*enum Operator{
 	Null,
 	Add,
-	Subtract
-} Operator;
+	Subtract,
+};*/
 
-typedef struct Sqrt {
+struct Sqrt {
 	int whole;
 	int sqrt;
 	bool imaginary;
 };
 
-typedef struct Quadratic {
+struct Quadratic {
 	int whole;
 	Operator mode;
 	Sqrt squrt;

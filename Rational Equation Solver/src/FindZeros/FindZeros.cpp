@@ -14,7 +14,7 @@ int[] factor(int[] terms, Fraction zero){
 }
 
 Quadratic fracToQuad(Fraction fraction){
-	return Quadratic{fraction.numerator, Operator.Null, Sqrt{0, 0, false,}};
+	return Quadratic{fraction.numerator, Null, Sqrt{0, 0, false,}};
 }
 
 

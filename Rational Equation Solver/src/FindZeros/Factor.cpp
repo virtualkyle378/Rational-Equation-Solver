@@ -12,18 +12,19 @@ vector<int> factorNumber(int num){
 			}
 		}
 	}
+	Fraction x(5,3);
 	return factors;
 }
 
 vector<Fraction> pairFactors(vector<int> factor1, vector<int> factor2){
-	//This method does not compile
-	vector<Fraction> fractions;
+	vector<Fraction> fractions (6, Fraction(5,3));
 	for (unsigned int x = 0; x < factor1.size(); x++) {
 		for (unsigned int y = 0; y < factor2.size(); ++y) {
-			Fraction fraction = simpFrac(Fraction(factor1.at(x), factor2.at(y));
+			Fraction fraction = simpFrac(Fraction(factor1.at(x), factor2.at(y)));
+			//Fraction fraction(5,3);
 			if(find(fractions.begin(), fractions.end(), fraction) == fractions.end()){
 				fractions.push_back(fraction);
-				fractions.push_back(new Fraction(fraction.numerator *= -1, fraction.denominator));
+				fractions.push_back(Fraction(fraction.numerator *= -1, fraction.denominator));
 			}// if the fraction does not currently exist, append the + and - of the fraction
 		}
 	}

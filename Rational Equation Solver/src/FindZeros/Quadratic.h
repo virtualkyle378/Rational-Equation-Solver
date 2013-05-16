@@ -1,11 +1,16 @@
 #ifndef QUADRATIC_H_
 #define QUADRATIC_H_
+#include "Quadratic.h"
 
-typedef enum Operator;
+enum Operator{
+	Null,
+	Add,
+	Subtract,
+};
 
-typedef struct Sqrt;
+struct Sqrt;
 
-typedef struct Quadratic;
+struct Quadratic;
 
 
 #endif /* QUADRATIC_H_ */

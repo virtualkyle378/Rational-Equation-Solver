@@ -1,6 +1,6 @@
 #ifndef QUADRATIC_H_
 #define QUADRATIC_H_
-#include "Quadratic.h"
+#include "Quadratic.cpp"
 
 enum Operator{
 	Null,

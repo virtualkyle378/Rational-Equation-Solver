@@ -3,6 +3,8 @@
 	Add,
 	Subtract,
 };*/
+#include "Quadratic.h"
+
 
 struct Sqrt {
 	int whole;
@@ -14,6 +16,7 @@ struct Quadratic {
 	int whole;
 	Operator mode;
 	Sqrt squrt;
+	int denominator;
 };
 
 

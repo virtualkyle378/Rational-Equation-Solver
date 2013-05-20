@@ -4,16 +4,6 @@ class Fraction {
 public:
 	int numerator;
 	int denominator;
-	//Fraction(Fraction& other): numerator(other.numerator), denominator(other.denominator){
-	//};
-	//Fraction(const Fraction& other){
-	//	numerator = other.numerator;
-	//	denominator = other.denominator;
-	//}
-	//Fraction(int numerator, int denominator){
-	//	this->numerator = numerator;
-	//	this->denominator = denominator;
-	//}
 	Fraction(const Fraction& other);
 	Fraction(int numerator, int denominator);
 	~Fraction();

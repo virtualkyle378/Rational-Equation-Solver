@@ -16,6 +16,20 @@ vector<int> factorNumber(int num){
 	return factors;
 }
 
+vector<int> findPrimeFactors(int num){
+	vector<int> out;
+	int factor = 2;
+	while(num > 1){
+		if(num % factor == 0){
+			if(num / factor >= 1)
+				out.push_back(factor);
+		} else {
+			factor++;
+		}
+	}
+	return out;
+}
+
 vector<Fraction> pairFactors(vector<int> factor1, vector<int> factor2){
 	vector<Fraction> fractions (6, Fraction(5,3));
 	for (unsigned int x = 0; x < factor1.size(); x++) {

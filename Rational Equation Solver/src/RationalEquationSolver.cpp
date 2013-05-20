@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <Fraction.h>
-#include <type_traits>
 using namespace std;
 
 int main(){
-	//cout<<integer();
+	cout<<6;
 	//Fraction x;
 	//x.numerator;
 	//vector<Fraction> fractions;

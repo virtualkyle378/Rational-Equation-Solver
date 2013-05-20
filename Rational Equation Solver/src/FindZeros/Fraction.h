@@ -1,13 +1,16 @@
 #ifndef FRACTION_H_
 #define FRACTION_H_
-#include "Fraction.cpp"
+//#include "Fraction.cpp"
 
-class Fraction;
-
-Fraction::Fraction(const Fraction& other);
-Fraction::Fraction(int numerator, int denominator);
-Fraction::~Fraction();
-bool Fraction::operator==(const Fraction& other);
+class Fraction {
+public:
+	int numerator;
+	int denominator;
+	Fraction(const Fraction& other);
+	Fraction(int numerator, int denominator);
+	~Fraction();
+	bool operator==(const Fraction& other);
+};
 
 Fraction simpFrac(Fraction frac);
 

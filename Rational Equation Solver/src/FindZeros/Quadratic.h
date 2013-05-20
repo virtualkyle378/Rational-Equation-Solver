@@ -1,22 +1,42 @@
 #ifndef QUADRATIC_H_
 #define QUADRATIC_H_
-#include "Quadratic.cpp"
+//#include "Quadratic.cpp"
+#include "Fraction.h"
 
-class Sqrt;
 
-//using namespace Sqrt;
-Sqrt::Sqrt();
-Sqrt::Sqrt(int sqrt);
-Sqrt::Sqrt(int whole, int sqrt, bool imaginary);
-void Sqrt::simplify();
+class Sqrt {
+public:
+	int whole;
+	int sqrt;
+	bool imaginary;
 
-class Quadratic;
+	Sqrt();
 
-//using namespace Quadratic;
-Quadratic::Quadratic(int whole, Operator mode, Sqrt sqrt, int denominator);
-Quadratic::Quadratic(Fraction fraction);
-Quadratic::Quadratic(const Quadratic& other);
-Quadratic::~Quadratic();
-void Quadratic::simplify();
+	Sqrt(int sqrt);
+
+	Sqrt(int whole, int sqrt, bool imaginary);
+
+	void simplify();
+
+};
+
+class Quadratic {
+public:
+	int whole;
+	Operator mode;
+	Sqrt sqrt;
+	int denominator;
+
+	Quadratic(int whole, Operator mode, Sqrt sqrt, int denominator);
+
+	Quadratic(Fraction& frac);
+
+	Quadratic(const Quadratic& other);
+
+	~Quadratic();
+
+	void simplify();
+
+};
 
 #endif /* QUADRATIC_H_ */

@@ -1,14 +1,5 @@
 //Fraction simpFrac(Fraction frac);
-
-class Fraction {
-public:
-	int numerator;
-	int denominator;
-	Fraction(const Fraction& other);
-	Fraction(int numerator, int denominator);
-	~Fraction();
-	bool operator==(const Fraction& other);
-};
+#include "Fraction.h"
 
 Fraction::Fraction(const Fraction& other){
 	numerator = other.numerator;

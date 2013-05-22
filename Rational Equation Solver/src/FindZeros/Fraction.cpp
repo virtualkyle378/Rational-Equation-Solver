@@ -29,7 +29,7 @@ Fraction simpFrac(Fraction frac){
 	if(signinv)
 		frac.numerator = frac.numerator * -1;
 	for(int i = frac.numerator; i > 1; i--){
-		if(i % frac.numerator == 0 && i % frac.denominator == 0){
+		if(frac.numerator % i == 0 && frac.denominator % i == 0){
 			frac.numerator /= i;
 			frac.denominator /= i;
 			break;

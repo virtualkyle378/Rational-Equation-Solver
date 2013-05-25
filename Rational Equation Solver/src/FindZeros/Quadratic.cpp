@@ -7,6 +7,7 @@
 #include "Fraction.h"
 #include "Quadratic.h"
 #include <vector>
+#include <iostream>
 using namespace std;
 
 Sqrt::Sqrt(){
@@ -32,8 +33,10 @@ vector<int> findPrimeFactors(int num){
 	int factor = 2;
 	while(num > 1){
 		if(num % factor == 0){
-			if(num / factor >= 1)
+			if(num / factor >= 1){
 				out.push_back(factor);
+				num /= factor;
+			}
 		} else {
 			factor++;
 		}
@@ -50,16 +53,25 @@ void Sqrt::simplify(){
 	sqrt = 0;
 	whole = 0;
 	while(factors.size() > 0){
-		if(factors.at(0) == factors.at(1)){
-			if(whole == 0)
-				whole = 1;
-			whole += factors.at(0);
-			factors.erase(factors.begin(), factors.begin() + 2);
+		if(factors.size() > 1){
+			if(factors.at(0) == factors.at(1)){
+				if(whole == 0)
+					whole = 1;
+				whole *= factors.at(0);
+				factors.erase(factors.begin(), factors.begin() + 2);
+			} else {
+				if(sqrt == 0)
+					sqrt = 1;
+				sqrt *= factors.at(0);
+				factors.erase(factors.begin(), factors.begin() + 1);
+			}
 		} else {
+			cout<<factors.size();
 			if(sqrt == 0)
 				sqrt = 1;
-			sqrt += factors.at(0);
+			sqrt *= factors.at(0);
 			factors.erase(factors.begin(), factors.begin() + 1);
+			cout<<sqrt<<endl;
 		}
 	}
 }
@@ -93,10 +105,11 @@ void Quadratic::simplify(){
 	//combine numerators if possible
 	if(sqrt.sqrt == 0){
 		Fraction x = simpFrac(Fraction(whole + sqrt.whole, denominator));
+		sqrt.whole = 0;
 		whole = x.numerator;
 		denominator = x.denominator;
 	} else {
-		for(int i = whole; i > 1; i++){
+		for(int i = whole; i > 1; i--){
 			if((whole % i == 0) && (denominator % i == 0) && (sqrt.whole % i == 0)){
 				whole /= i;
 				denominator /= i;

@@ -24,6 +24,8 @@ vector<Quadratic> findZeros(vector<int> terms, Fraction possiblezeros[], vector<
 	return zeros;
 }
 
+
+
 bool machine(vector<int> terms, Fraction zero){
 	int output = 0;
 	int divisor = zero.numerator / zero.denominator;

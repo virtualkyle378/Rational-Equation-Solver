@@ -2,14 +2,15 @@
 #include "Operator.h"
 #include "Quadratic.h"
 #include "Fraction.h"
+#include "FindZeros.h"
 using namespace std;
 
 bool machine(vector<int> terms, Fraction zero);
 vector<int> factor(vector<int> terms, Fraction zero);
 vector<Quadratic> calcQuad(int a, int b, int c);
 
-vector<Quadratic> findZeros(vector<int> terms, Fraction possiblezeros[], vector<Quadratic> zeros){
-	for(unsigned int i = 0; i < sizeof(possiblezeros)/sizeof(possiblezeros[0]); i++){
+vector<Quadratic> findZeros(vector<int> terms, vector<Fraction> possiblezeros, vector<Quadratic> zeros){
+	for(int i = 0; i < possiblezeros.size(); i++){
 		if(machine(terms, possiblezeros[i])){
 			zeros.push_back(Quadratic(possiblezeros[i]));
 			vector<int> newterms = factor(terms, possiblezeros[i]);

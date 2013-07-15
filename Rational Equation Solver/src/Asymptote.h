@@ -1,7 +1,7 @@
 #ifndef ASYMPTOTE_H_
 #define ASYMPTOTE_H_
 
-#include "AsymptoteType.h"
+//#include "AsymptoteType.h"
 #include "Fraction.h"
 using namespace std;
 
